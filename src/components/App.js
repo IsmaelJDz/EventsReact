@@ -1,5 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "./Header";
+import Formulario from "./Formulario";
+
+import CategoriasProvider from "../context/CategoriaContext";
 
 //This data is only develop
 // API key
@@ -13,9 +16,13 @@ import Header from "./Header";
 
 function App() {
   return (
-    <Fragment>
+    <CategoriasProvider>
       <Header />
-    </Fragment>
+
+      <div className="uk-container">
+        <Formulario />
+      </div>
+    </CategoriasProvider>
   );
 }
 
