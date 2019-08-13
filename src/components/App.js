@@ -3,6 +3,8 @@ import Header from "./Header";
 import Formulario from "./Formulario";
 
 import CategoriasProvider from "../context/CategoriaContext";
+import EventosProvider from "../context/EventosContext";
+import ListaEventos from "./ListaEventos";
 
 //This data is only develop
 // API key
@@ -16,13 +18,15 @@ import CategoriasProvider from "../context/CategoriaContext";
 
 function App() {
   return (
-    <CategoriasProvider>
-      <Header />
-
-      <div className="uk-container">
-        <Formulario />
-      </div>
-    </CategoriasProvider>
+    <EventosProvider>
+      <CategoriasProvider>
+        <Header />
+        <div className="uk-container">
+          <Formulario />
+          <ListaEventos />
+        </div>
+      </CategoriasProvider>
+    </EventosProvider>
   );
 }
 
